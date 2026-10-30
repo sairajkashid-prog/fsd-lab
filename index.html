@@ -1,67 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sairaj Portfolio</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Internal CSS -->
-    <style>
-        h2 {
-            color: darkblue;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sairaj Kashid — Portfolio (FSD Lab)</title>
+<!-- External CSS (Lab requirement 1) -->
+<link rel="stylesheet" href="style.css">
+<!-- Internal CSS (Lab requirement 2) -->
+<style>
+  h2 { color: #7dd3fc; }
+  .lab-note { border-left-color: #22d3ee; }
+</style>
 </head>
 <body>
 
-    <!-- Inline CSS -->
-    <h1 style="color: green; text-align: center;">My Portfolio</h1>
+<nav class="nav">
+  <span class="brand">SK<span>.</span></span>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" target="_blank">Contact</a>
-    </nav>
+<header class="hero">
+  <!-- Inline CSS (Lab requirement 3) -->
+  <h1 style="color:#5eead4; text-align:center; letter-spacing:-1px;">Sairaj Sandip Kashid</h1>
+  <p class="tagline">Computer Engineering @ MIT-WPU, Pune · Full-stack &amp; data engineering</p>
+  <div class="chips">
+    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span>
+  </div>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a Third Year CSE student learning Full Stack Development.</p>
-    </section>
+<main>
+  <section id="about" class="card pretty">
+    <h2>About Me</h2>
+    <p>Final-year Computer Engineering student building deployable software — from AI civic-issue detection to real-data ETL pipelines. Every project I ship gets a public URL, not just a README.</p>
+    <p class="lab-note">This page itself is the FSD Lab artefact: it demonstrates all three CSS methods — <b>external</b> (<code>style.css</code>), <b>internal</b> (this block) and <b>inline</b> (the heading above).</p>
+  </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Git & GitHub</li>
-        </ul>
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <ul class="skill-list">
+      <li><b>Frontend</b> — HTML, CSS, JavaScript, React</li>
+      <li><b>Backend</b> — Node.js, Express, REST APIs</li>
+      <li><b>Data</b> — Python, Pandas, SQL, ETL</li>
+      <li><b>Tooling</b> — Git &amp; GitHub, Docker, CI/CD</li>
+    </ul>
 
-        <table border="1">
-            <tr>
-                <th>Technology</th>
-                <th>Level</th>
-            </tr>
-            <tr>
-                <td>HTML</td>
-                <td>Beginner</td>
-            </tr>
-            <tr>
-                <td>CSS</td>
-                <td>Beginner</td>
-            </tr>
-        </table>
-    </section>
+    <h3>Proficiency</h3>
+    <table class="tbl">
+      <thead>
+        <tr><th>Technology</th><th>Level</th><th>Used in</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>HTML5 / CSS3</td><td><span class="lvl l4">Advanced</span></td><td>This page, Professional Website</td></tr>
+        <tr><td>JavaScript</td><td><span class="lvl l4">Advanced</span></td><td>Course Market Intelligence</td></tr>
+        <tr><td>React</td><td><span class="lvl l3">Intermediate</span></td><td>CivicEye AI</td></tr>
+        <tr><td>Node.js</td><td><span class="lvl l3">Intermediate</span></td><td>Assignment 6 REST API</td></tr>
+        <tr><td>Python</td><td><span class="lvl l4">Advanced</span></td><td>openFDA DataOps tower</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            Name: <input type="text"><br><br>
-            Email: <input type="email"><br><br>
-            <input type="submit">
-        </form>
-    </section>
+  <section id="projects" class="card">
+    <h2>Live Projects</h2>
+    <div class="proj-grid">
+      <a class="proj" href="https://sairajkashid-prog.github.io/civiceye-ai/" target="_blank" rel="noopener">
+        <b>CivicEye AI</b><span>AI civic-issue management · React + Node</span><em>Open live ↗</em>
+      </a>
+      <a class="proj" href="https://sairajkashid-prog.github.io/course-market-intelligence/" target="_blank" rel="noopener">
+        <b>Course Market Intelligence</b><span>Market analytics dashboard</span><em>Open live ↗</em>
+      </a>
+      <a class="proj" href="https://sairajkashid-prog.github.io/ai-learning-roi-studio/" target="_blank" rel="noopener">
+        <b>AI Learning ROI Studio</b><span>3D ROI simulator</span><em>Open live ↗</em>
+      </a>
+      <a class="proj" href="https://sairajkashid-prog.github.io" target="_blank" rel="noopener">
+        <b>All projects</b><span>Full portfolio hub</span><em>Open live ↗</em>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact Me</h2>
+    <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.sent').hidden=false;">
+      <label>Name
+        <input type="text" placeholder="Your name" required>
+      </label>
+      <label>Email
+        <input type="email" placeholder="you@company.com" required>
+      </label>
+      <label>Message
+        <textarea rows="3" placeholder="Say hello…"></textarea>
+      </label>
+      <button type="submit">Send message</button>
+      <p class="sent" hidden>✅ Thanks — demo form, no message was actually sent.</p>
+    </form>
+    <p class="foot">Reach me directly: <a href="mailto:sairajkashidsk@gmail.com">sairajkashidsk@gmail.com</a> · <a href="https://github.com/sairajkashid-prog" target="_blank" rel="noopener">GitHub</a></p>
+  </section>
+</main>
+
+<footer class="site-foot">FSD Lab · Sairaj Sandip Kashid · MIT World Peace University</footer>
 
 </body>
 </html>
